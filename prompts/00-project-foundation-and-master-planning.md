@@ -16,7 +16,7 @@ Act as a Principal Software Engineer, AI Platform Architect, Senior SDET, Softwa
 
 We are starting a brand-new long-term software project.
 
-Project Name:
+Project Name: <Project Name>
 
 Enterprise AI Testing Platform
 
