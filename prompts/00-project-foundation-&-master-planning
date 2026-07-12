@@ -1,0 +1,186 @@
+# Prompt 0 — Project Foundation & Master Planning
+
+Use this once when starting a brand-new project.
+
+After the project foundation is created:
+
+ - Save the generated Project Continuation Plan.
+ - From then on, switch to your normal workflow (Prompt 1 → Prompt 2 → Prompt 3...).
+
+---
+
+```
+Act as a Principal Software Engineer, AI Platform Architect, Senior SDET, Software Architect, Engineering Manager, Technical Recruiter, and Product Designer.
+
+We are starting a brand-new long-term software project.
+
+Project Name:
+
+Enterprise AI Testing Platform
+
+This project will become my flagship engineering portfolio and will continuously evolve for the next 1–2+ years.
+
+The objective is NOT to build a demo.
+
+The objective is to build a production-quality, enterprise-grade platform that demonstrates senior-level engineering skills across AI, software testing, automation, system design, and software architecture.
+
+The platform should be designed from the beginning for long-term extensibility.
+
+Future technologies should be easy to add without requiring major redesign.
+
+Assume:
+
+- I prefer open-source and free technologies whenever practical.
+- Paid services may be supported later through provider abstractions.
+- The architecture should support replacing any major component without affecting the rest of the platform.
+- Maintainability is more important than quickly shipping features.
+- Backward compatibility should be preserved whenever practical.
+
+The platform should eventually support areas such as:
+
+- LLM Testing
+- Prompt Testing
+- AI Evaluation
+- RAG Evaluation
+- Agent Evaluation
+- Multi-Provider LLM Support
+- Multi-Provider Embeddings
+- Multiple Vector Databases
+- Hybrid Retrieval
+- Knowledge Graph Retrieval
+- Playwright AI Testing
+- API Testing
+- Performance Testing
+- AI Observability
+- AI Security Testing
+- Benchmarking
+- Synthetic Test Generation
+- Dataset Management
+- Experiment Tracking
+- Reporting
+- CI/CD
+- Plugin Architecture
+
+Before suggesting implementation, design the project as if it were being developed by an enterprise engineering team.
+
+Generate a complete Project Foundation document.
+
+The document should include:
+
+# Vision
+
+# Goals
+
+# Non-Goals
+
+# Target Users
+
+# Long-Term Roadmap
+
+# Engineering Philosophy
+
+# Technology Selection
+
+Explain why every major technology was selected.
+
+Include alternatives that were considered.
+
+# Repository Structure
+
+Design a scalable repository suitable for years of development.
+
+# Architecture
+
+Design a modular enterprise architecture.
+
+Use diagrams where appropriate.
+
+# Design Patterns
+
+Explain which patterns should be used throughout the project and why.
+
+# Module Responsibilities
+
+Clearly define the responsibility of every major module.
+
+# Configuration Strategy
+
+Explain how configuration should work.
+
+# Provider Strategy
+
+Explain how provider abstraction should work.
+
+# Plugin Strategy
+
+Explain how optional components should integrate.
+
+# Testing Strategy
+
+Design a complete testing strategy.
+
+Include:
+
+- Unit Testing
+- Integration Testing
+- End-to-End Testing
+- AI Evaluation
+- Regression Testing
+- Performance Testing
+
+# Development Workflow
+
+Explain the recommended Git workflow.
+
+Explain how feature branches should be organized.
+
+Assume I will use the Engineering Project Workflow Prompts repository.
+
+# Coding Standards
+
+Define coding conventions.
+
+# Documentation Standards
+
+Explain what documentation should exist.
+
+# Release Strategy
+
+Design an enterprise release strategy.
+
+# Technical Debt Strategy
+
+Explain how technical debt should be handled.
+
+# Future Expansion
+
+Design the architecture so future technologies can be added without major redesign.
+
+# Risks
+
+Identify architectural risks.
+
+Recommend mitigation strategies.
+
+# Recommended Phase Roadmap
+
+Break the project into logical implementation phases.
+
+Each phase should contain:
+
+- Objective
+- Deliverables
+- Dependencies
+- Estimated complexity
+- Portfolio value
+
+The roadmap should maximize long-term engineering quality instead of short-term feature count.
+
+Finally, generate the initial Master Project Continuation Plan.
+
+This continuation plan will become the single source of truth for all future development.
+
+Do not generate implementation code.
+
+Focus entirely on designing the project correctly before implementation begins.
+```
