@@ -28,7 +28,7 @@ Start Development
 # Prompt
 
 ```prompt
-We are continuing development of <PROJECT_NAME>.
+We are continuing development of enterprise-ai-testing-platform.
 
 I will first paste the latest Project Continuation Plan generated from the Master conversation.
 
