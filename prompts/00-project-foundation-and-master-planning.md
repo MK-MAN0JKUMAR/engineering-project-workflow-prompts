@@ -91,6 +91,16 @@ Include alternatives that were considered.
 
 Design a scalable repository suitable for years of development.
 
+The repository structure should distinguish between:
+
+- stable long-term directories
+- directories expected to grow significantly
+- future extension points
+
+Explain why each top-level directory exists.
+
+Avoid introducing directories that do not provide clear long-term value.
+
 # Architecture
 
 Design a modular enterprise architecture.
@@ -138,6 +148,30 @@ Explain how feature branches should be organized.
 
 Assume I will use the Engineering Project Workflow Prompts repository.
 
+# Initial Repository Bootstrap Plan
+
+Before any production code is implemented, define the repository bootstrap plan.
+
+Include:
+
+- Recommended initial folder structure
+- Repository governance files
+- Development tooling
+- Package management strategy
+- Version control strategy
+- CI/CD foundation
+- Documentation foundation
+- Initial testing foundation
+- Branch strategy
+- Branch protection recommendations
+
+Clearly separate:
+
+- Work that belongs on the initial `main` branch
+- Work that belongs in the first feature branch
+
+The first feature branch should establish the engineering foundation before implementing business functionality.
+
 # Coding Standards
 
 Define coding conventions.
@@ -180,7 +214,17 @@ The roadmap should maximize long-term engineering quality instead of short-term 
 
 Finally, generate the initial Master Project Continuation Plan.
 
-This continuation plan will become the single source of truth for all future development.
+This continuation plan becomes the project's architectural baseline and the single source of truth for future feature branches.
+
+Separate the continuation plan into:
+
+- Permanent Project Decisions
+- Initial Repository Decisions
+- Recommended Development Workflow
+- Phase Roadmap
+- Current Project Status
+
+Future feature branch handoffs will extend this continuation plan rather than replacing it.
 
 Do not generate implementation code.
 
