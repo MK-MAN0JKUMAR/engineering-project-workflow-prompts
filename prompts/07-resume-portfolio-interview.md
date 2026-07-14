@@ -40,19 +40,19 @@ Update
 
 # Prompt
 ```
-Act as a Principal Software Engineer, Senior SDET Interviewer, Engineering Manager, Technical Recruiter, and Resume Reviewer.
+Act as a Principal Software Engineer, Senior SDET Interviewer, Engineering Manager, Technical Recruiter, Resume Reviewer, and Hiring Panel Member.
 
-The current Project Continuation Plan is the single source of truth.
+Treat the current Project Continuation Plan as the authoritative source of truth.
 
-Review the entire project.
+Review the entire project rather than only recent feature branches.
 
-Do not summarize only recent work.
+Do not invent features, metrics, or business impact.
 
-Do not invent features.
+Describe only work that has actually been implemented and documented.
 
-Only describe work that actually exists.
+Whenever quantitative metrics are unavailable, describe achievements qualitatively instead of estimating numbers.
 
-The objective is to translate engineering work into professional resume, portfolio, and interview material suitable for experienced AI testing and automation roles.
+The objective is to translate engineering work into accurate, professional resume, portfolio, GitHub, and interview material suitable for senior AI testing and automation roles.
 
 Think from the perspective of someone reviewing candidates for:
 
@@ -78,37 +78,49 @@ Explain:
 - who would benefit
 - why it is technically impressive
 
-# Resume Impact
+# Project Evolution
 
-Generate strong resume bullet points.
+Summarize how the project evolved.
 
-Requirements:
+Include:
 
-- Use measurable engineering language whenever possible.
-- Focus on architecture, scalability, maintainability, testing, and AI engineering.
+- Major milestones
+- Important feature branches
+- Architecture evolution
+- Engineering maturity gained
+
+Keep this concise.
+
+The objective is to help explain the project's journey during interviews.
+
+# Resume Translation
+
+Generate resume bullet points grouped into:
+
+- Architecture
+- AI Engineering
+- Automation
+- Testing
+- DevOps
+- Developer Experience
+- Software Quality
+- Open Source Engineering
+
+For every bullet:
+
+- Start with a strong action verb.
+- Mention technologies only when they add value.
 - Avoid generic buzzwords.
-- Do not exaggerate.
-- Use action-oriented language.
-
-Organize into:
-
-Core Engineering
-
-AI Engineering
-
-Automation
-
-Testing
-
-Architecture
-
-Performance
-
-Evaluation
-
-Developer Experience
+- Avoid exaggerated claims.
+- Keep each bullet suitable for a professional resume.
 
 # ATS Keywords
+
+Generate ATS keywords based only on technologies currently implemented in the repository.
+
+Do not include technologies that are only planned for future development.
+
+Group keywords by technical domain.
 
 Generate important ATS keywords grouped by category.
 
@@ -173,6 +185,17 @@ Future Roadmap
 
 Suitable for the GitHub repository homepage.
 
+# Recruiter Summary
+
+Generate a concise summary suitable for recruiters.
+
+Requirements:
+
+- 100–150 words
+- Technical but easy to understand
+- Focus on business value and engineering maturity
+- Avoid implementation details
+
 # Portfolio Summary
 
 Write a portfolio description that explains:
@@ -215,6 +238,27 @@ Lessons Learned
 This should be suitable for answering:
 
 "Tell me about your most impressive project."
+
+# Interview Talking Points
+
+Generate concise talking points for interviews.
+
+Include:
+
+- 2-minute explanation
+- 5-minute explanation
+- 10-minute deep dive
+
+For each version:
+
+- Key architecture
+- Biggest challenge
+- Biggest engineering decision
+- Lessons learned
+
+Do not script exact answers.
+
+Provide structured talking points.
 
 # Deep Technical Questions
 
@@ -304,6 +348,20 @@ Identify the strongest aspects of the project.
 
 Explain why they stand out.
 
+# Evidence Matrix
+
+For every major project claim identify the evidence supporting it.
+
+Use the following format:
+
+| Claim | Evidence |
+|--------|----------|
+| Example claim | Feature branch, architecture, tests, documentation |
+
+Every important resume statement should be traceable to actual implementation.
+
+Do not fabricate evidence.
+
 # Current Weaknesses
 
 Identify areas that still reduce interview impact.
@@ -368,7 +426,32 @@ Overall Engineering Maturity
 
 Conclude with:
 
-If you were an Engineering Hiring Manager, would this project significantly strengthen the candidate's profile?
+## Hiring Manager Assessment
 
-Explain why.
+State whether this project would strengthen a candidate's profile for:
+
+- Senior SDET
+- Staff SDET
+- AI Test Engineer
+- AI QA Engineer
+- Automation Architect
+- AI Platform Engineer
+
+For each role include:
+
+- Current readiness
+- Biggest strengths
+- Biggest remaining gap
+
+Finish with:
+
+## Highest ROI Next Feature Branches
+
+Recommend the next feature branches that would provide the greatest improvement for:
+
+- Resume
+- Portfolio
+- Interview performance
+
+Rank them by expected impact.
 ```
