@@ -47,13 +47,21 @@ Interview Demo
 ```
 Perform a complete Release Readiness Review for this project.
 
-Assume this version is planned to become an official project release (for example v0.5, v1.0 or v2.0).
+Treat the current Project Continuation Plan as the authoritative source of truth.
 
-Review the entire current project state using the Project Continuation Plan as the single source of truth.
+Review the entire project rather than only recent feature branches.
 
-Do not review only recent work.
+Assume this version is being evaluated as an official project release.
 
-Think like a Principal Engineer responsible for approving a production release.
+Think like an Enterprise Release Review Board responsible for approving production-quality software.
+
+Base every recommendation on the current implementation and documented project state.
+
+If implementation details are required and the relevant files have not been shared, request only the required files before making conclusions.
+
+Do not recommend new features simply because they would be nice to have.
+
+Evaluate only whether the planned release scope has been completed successfully.
 
 The objective is to determine whether this release is ready for:
 
@@ -76,6 +84,22 @@ Include:
 - Release objective
 - Major capabilities introduced
 - Overall maturity
+
+# Release Scope Verification
+
+Review the planned release scope.
+
+Determine:
+
+- Planned features
+- Completed features
+- Deferred features
+- Removed features
+- Unexpected additions
+
+Explain whether the implemented scope matches the original release objective.
+
+Do not penalize intentionally deferred work.
 
 # Executive Assessment
 
@@ -209,6 +233,21 @@ Verify the existence and quality of:
 
 Identify missing documentation.
 
+# Developer Experience Review
+
+Review whether a new developer could successfully contribute.
+
+Evaluate:
+
+- onboarding
+- setup instructions
+- local development workflow
+- troubleshooting
+- command documentation
+- repository discoverability
+
+Estimate onboarding difficulty.
+
 # Dependency Review
 
 Review all major dependencies.
@@ -241,6 +280,23 @@ Review:
 
 Recommend improvements.
 
+# Repository Governance Review
+
+Verify:
+
+- Branch protection rules
+- GitHub Actions
+- CODEOWNERS
+- Pull request templates
+- Issue templates
+- Labels
+- Releases
+- Tags
+- License
+- Security policy
+
+Recommend improvements only if they affect release quality.
+
 # Portfolio Readiness
 
 Review whether this release demonstrates:
@@ -271,15 +327,22 @@ List weak areas.
 
 Categorize remaining work into:
 
-Critical
+Release Blockers
 
-Important
+High Priority
 
-Optional
+Medium Priority
 
-Future
+Low Priority
 
-Explain why.
+Future Roadmap
+
+For every item include:
+
+- Description
+- Why it remains
+- Recommended feature branch
+- Required before next release? (Yes/No)
 
 # Release Checklist
 
@@ -333,16 +396,30 @@ Explain the reasoning.
 
 If the release is rejected, provide a prioritized list of actions required before approval.
 
-Finish with an overall Release Quality Score from 1–10 for:
+Finish with a Release Scorecard.
+
+Provide scores (1–10) for:
 
 - Architecture
 - Code Quality
 - Testing
-- AI Engineering
 - Documentation
-- Performance
 - Security
+- Performance
 - Maintainability
+- Developer Experience
 - Portfolio Value
-- Overall Release Readiness
+- Release Readiness
+
+Then conclude with:
+
+## Next Milestone Recommendation
+
+Include:
+
+- Current Release Status
+- Next Recommended Version
+- Highest Priority Feature Branch
+- Estimated Repository Maturity
+- Overall Project Health
 ```
