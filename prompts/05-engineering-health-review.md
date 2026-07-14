@@ -44,17 +44,19 @@ Prioritize Future Branches
 ```
 Perform a complete Engineering Health & Technology Review of this project.
 
-Assume this project is intended to remain production-quality and evolve continuously for many years.
+Treat the current Project Continuation Plan as the authoritative source of truth.
 
-The current Project Continuation Plan is the single source of truth.
+Evaluate the project based on its current implementation rather than theoretical future designs.
 
 Do not recommend redesigns simply because newer technologies exist.
 
-Only recommend changes that provide meaningful long-term engineering value.
+Recommend architectural changes only when there is measurable long-term value.
 
-Think like a Principal Software Architect reviewing the platform after several months of development.
+Think like a Principal Software Architect conducting a formal engineering health review after several months of development.
 
-The objective is to determine whether the project is still healthy, maintainable, and aligned with current engineering best practices.
+Whenever implementation details are required to support a recommendation and the relevant files have not been shared, request only the necessary files before making conclusions.
+
+The objective is to determine whether the project remains healthy, maintainable, scalable, and aligned with enterprise engineering practices.
 
 Use the following structure.
 
@@ -74,6 +76,20 @@ Rate:
 - Portfolio Value
 
 Give an overall health score from 1–10.
+
+# Repository Evolution Review
+
+Review how the repository has evolved since the previous Engineering Health Review.
+
+Summarize:
+
+- Feature branches completed
+- Architectural growth
+- Repository growth
+- Dependency growth
+- Documentation growth
+
+Identify whether the project is evolving in a consistent direction or showing signs of architectural drift.
 
 # Architecture Health
 
@@ -151,7 +167,34 @@ For each dependency explain:
 
 Do not recommend replacing dependencies without strong engineering justification.
 
+# Technology Adoption Review
+
+Review technologies that have been introduced since the last Engineering Health Review.
+
+For each technology determine:
+
+- Is it actively being used?
+- Is it providing measurable value?
+- Has it increased unnecessary complexity?
+- Should it remain part of the project?
+
+Do not recommend removing technologies without strong engineering justification.
+
 # AI Ecosystem Review
+
+Review significant developments in the AI ecosystem since the previous Engineering Health Review.
+
+Recommend adoption only when a technology provides measurable improvements for this project.
+
+For every recommendation include:
+
+- Current limitation addressed
+- Expected engineering value
+- Migration effort
+- Compatibility with existing architecture
+- Recommended priority
+
+Do not recommend technologies based solely on popularity or release date.
 
 Review whether newer technologies provide meaningful value.
 
@@ -249,6 +292,22 @@ Determine whether the architecture can easily support:
 
 Estimate readiness.
 
+# Repository Governance Review
+
+Review whether repository governance remains appropriate.
+
+Evaluate:
+
+- Branch strategy
+- Branch protection rules
+- CI/CD workflows
+- Pull request templates
+- Issue templates
+- CODEOWNERS
+- Documentation standards
+
+Recommend updates only when they improve long-term maintainability.
+
 # Engineering Scorecard
 
 Provide scores (1–10) for:
@@ -313,5 +372,18 @@ Major Refactoring Required
 
 Explain why.
 
-If no major architectural work is needed, explicitly recommend continuing feature development instead of redesigning the platform.
+If no major architectural work is required, explicitly recommend continuing feature development instead of redesigning the platform.
+
+Conclude with:
+
+## Health Review Summary
+
+Include:
+
+- Overall Health Rating
+- Highest Priority Improvement
+- Architectural Stability
+- Technical Debt Trend
+- Repository Maturity
+- Recommended Next Review (for example, after 5–10 additional feature branches or before the next major release)
 ```
