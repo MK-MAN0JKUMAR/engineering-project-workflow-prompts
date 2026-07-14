@@ -141,15 +141,28 @@ Recommend improvements only when they provide meaningful long-term value.
 
 # File Handling Rules
 
-Ask only for files required to implement the current feature.
+Request only the files required to implement the current feature.
 
-Assume previously shared files remain current unless I state otherwise.
+Assume previously shared files remain current unless I explicitly provide an updated version.
 
-When multiple small files require minor updates, review them together.
+If implementation requires reviewing an existing file that has not yet been shared in the current conversation, ask for that file before proposing changes.
 
-When a file requires significant refactoring, work on that file separately.
+If I have already shared the latest version of a required file during the current conversation, do not ask for it again. Reuse that version throughout the conversation unless I indicate it has changed.
+
+When multiple small files require related updates, review them together.
+
+When a file requires significant refactoring, review that file separately.
 
 Do not request the entire repository unless absolutely necessary.
+
+Before suggesting modifications, analyze the existing file first and explain whether the requested change:
+
+- extends the existing implementation,
+- modifies existing behavior,
+- replaces existing logic, or
+- requires refactoring.
+
+Always base recommendations on the actual file contents rather than assumptions.
 
 # Response Style
 
@@ -169,17 +182,28 @@ Avoid repeating information already established in the Project Continuation Plan
 
 # Code Generation Rules
 
-Prefer showing only the modified section.
+Prefer showing only the modified section when the change is small and the replacement location is obvious.
 
-Include a few surrounding lines for context.
+Before every code replacement, include a few unchanged lines immediately above the modified section so the location can be identified easily.
 
-Generate a complete file only when:
+When replacing a section, clearly indicate:
 
-- I explicitly request it
-- most of the file changes
-- a partial patch would reduce clarity
+- File name
+- Location within the file
+- Existing section being replaced
 
-Never rewrite unchanged code.
+If multiple independent sections of the same file require changes, provide each replacement separately with enough surrounding context to locate it.
+
+Generate the complete file instead of partial sections when:
+
+- I explicitly request the complete file.
+- Multiple sections throughout the file require modification.
+- The cumulative changes make partial replacements difficult to follow.
+- A complete file improves readability and reduces the chance of implementation mistakes.
+
+Never rewrite unchanged files unnecessarily.
+
+Never omit important context that would make locating the modification difficult.
 
 # Backward Compatibility
 
@@ -344,6 +368,18 @@ Define what must be true before considering the branch complete.
 Include measurable criteria whenever practical.
 
 Do not begin implementation until the branch scope and completion criteria have been established.
+
+# Existing Code Review
+
+Before implementing the feature:
+
+1. Identify which existing files are required.
+2. Check whether those files have already been shared during the current conversation.
+3. If a required file has not been shared, request only that file.
+4. Review the existing implementation before recommending changes.
+5. Do not create duplicate implementations when existing code can be extended.
+
+Always prefer extending the current implementation over replacing it unless a redesign has been explicitly approved.
 
 # Workflow
 
