@@ -4,21 +4,32 @@
 
 Use this prompt after completing a Git feature branch.
 
-It generates a complete engineering handoff that will be copied into the Master conversation.
+Generate an engineering handoff document that will be copied into the Master Project Continuation Plan.
 
-This document becomes the permanent engineering history for that branch.
+This document becomes the permanent engineering history for the completed feature branch.
 
-## When to Use
-```
+The objective is **not** to create exhaustive documentation.
+
+The objective is to preserve every important engineering decision, repository change, architectural update, dependency change, validation result, and future recommendation so that a completely new ChatGPT conversation (or another senior engineer) can continue development without requiring additional explanation.
+
+---
+
+# When to Use
+
+```text
 MASTER
    │
    ├── Create Feature Branch
    │
    ├── Develop Feature
    │
-   ├── Testing Complete
+   ├── Validation Complete
    │
    ├── Git Commit(s)
+   │
+   ├── Pull Request
+   │
+   ├── Merge Branch
    │
    └── Paste Prompt 2
             │
@@ -29,36 +40,58 @@ Generate Engineering Handoff
 Paste into MASTER
             │
             ▼
-Merge Git Branch
+Continue Next Feature Branch
 ```
 
 ---
 
-# Prompt
-```
-Generate a complete engineering handoff document for this Git feature branch.
+# Instructions
 
-Assume this document will be copied into the Master Project Continuation Plan and will become the permanent engineering history for this branch.
+```prompt
+Review the **entire conversation**, not only the most recent messages.
 
-Do not summarize only the most recent messages.
-
-Review the entire conversation before generating the document.
+Treat every engineering decision made during the feature branch as part of the project history.
 
 Do not include implementation code.
 
-Write the document as if another senior engineer will continue development months later without access to this branch.
+Do not omit important changes simply because they are small.
 
-The document must be complete enough that a completely new ChatGPT conversation can continue development without asking me to explain anything again.
+If the response exceeds the maximum response size, continue in additional parts until every required section has been completed.
 
-Use the following structure.
+Do not shorten the response by skipping sections.
+
+Prefer concise engineering summaries instead of long explanations.
+
+Use:
+
+- bullet points
+- tables
+- grouped information
+- short engineering explanations
+
+Avoid repeating information.
+
+Explain only files that were created, modified, or removed.
+
+---
+
+# Output Structure
 
 # Project
 
-Project name
+- Project name
+
+---
 
 # Feature Branch
 
-Git branch name
+Include:
+
+- Git branch name
+- Branch status
+- Merge status
+
+---
 
 # Branch Objective
 
@@ -66,30 +99,125 @@ Include:
 
 - Original objective
 - Final objective
-- Scope changes (if any)
+- Scope changes
 - Why the scope changed
+
+---
 
 # Business Value
 
-Explain:
+Briefly explain:
 
 - Why this feature exists
-- What problem it solves
+- Problem it solves
 - Portfolio value
 - Interview value
 - Long-term architectural value
 
+---
+
 # Features Completed
 
-For every completed feature explain:
+For every completed feature include:
 
-- What was implemented
-- Why it was implemented
+- Feature name
+- Purpose
 - Files affected
-- User-visible impact
 - Architectural impact
 
-Do not include code.
+Group related work together when appropriate.
+
+Do not include implementation code.
+
+---
+
+# Files Added
+
+List every newly created file.
+
+For each file include:
+
+| File | Responsibility | Why Added |
+
+Keep explanations to one or two sentences.
+
+---
+
+# Files Modified
+
+List every modified file.
+
+For each file include:
+
+| File | What Changed | Why Changed |
+
+Do not include implementation code.
+
+---
+
+# Files Removed
+
+If applicable, include:
+
+| File | Reason Removed |
+
+---
+
+# Dependencies
+
+## Installed
+
+For every newly installed dependency include:
+
+- Package
+- Purpose
+- Why it was selected
+- Long-term project value
+
+---
+
+## Updated
+
+For every updated dependency include:
+
+- Package
+- Previous version
+- New version
+- Reason for update
+- Impact on the project
+
+---
+
+## Removed
+
+For every removed dependency include:
+
+- Package
+- Reason removed
+- Replacement (if applicable)
+
+---
+
+# Configuration Changes
+
+List all configuration changes made during the branch.
+
+Examples include:
+
+- pyproject.toml
+- GitHub Actions
+- pre-commit
+- environment variables
+- tooling
+- CI/CD
+- build configuration
+- linting
+- formatting
+- testing configuration
+
+Explain each change in one or two sentences.
+
+---
 
 # Architecture Changes
 
@@ -101,234 +229,157 @@ Before
 
 After
 
-Include architecture diagrams whenever useful.
+Include a simple architecture diagram whenever useful.
 
 Highlight:
 
-- new layers
-- removed layers
-- modified relationships
+- new modules
+- removed modules
 - dependency changes
+- architectural relationships
+- permanent architectural decisions introduced by this branch
 
-# New Components
+---
 
-List every new:
+# Engineering Decisions
 
-- file
-- class
-- interface
-- provider
-- factory
-- strategy
-- service
-- manager
-- utility
-- helper
-- configuration
-- design pattern
+List every important engineering decision.
 
-For each component explain:
+For each decision include:
 
-- responsibility
-- dependencies
-- why it was introduced
+- Decision
+- Reason
+- Alternatives considered
+- Long-term impact
 
-# Existing Files Modified
-
-For every modified file explain:
-
-- why it changed
-- what changed
-- architectural impact
-
-Do not include implementation code.
-
-# Configuration Changes
-
-Include:
-
-- configuration updates
-- feature flags
-- constants
-- environment variables
-- provider settings
-- model settings
-- retrieval settings
-- evaluation settings
-- UI configuration
-
-Explain why each change was required.
-
-# Dependencies
-
-List:
-
-Installed
-
-Updated
-
-Removed
-
-For every dependency explain:
-
-- purpose
-- alternatives considered
-- long-term maintenance impact
+---
 
 # Problems Encountered
 
 For every important issue include:
 
-- error
-- root cause
-- investigation
-- solution
-- final decision
+- Problem
+- Root cause
+- Investigation
+- Resolution
+- Final decision
 
-Include architectural problems that were intentionally not solved.
+Include architectural issues that were intentionally deferred.
 
-# Design Decisions
+---
 
-List important engineering decisions.
-
-For every decision explain:
-
-- options considered
-- chosen solution
-- why it was selected
-- trade-offs
-- rejected alternatives
-
-# Testing Performed
+# Validation Performed
 
 List every validation completed.
 
 Examples:
 
-- CLI
-- Streamlit
-- API
-- Retrieval
-- Hybrid Retrieval
-- Metadata Filtering
-- Parent Retrieval
-- Upload
-- Evaluation
-- Provider Switching
-- Reports
-- Logging
-- Performance
-- Regression
+- Ruff
+- Black
+- MyPy
+- Pytest
+- Coverage
+- GitHub Actions
+- API testing
+- UI testing
+- Manual verification
+- Performance validation
 
 For each include:
 
-- what was tested
-- result
-- remaining concerns
+- Purpose
+- Result
 
-# Performance Impact
-
-If applicable include:
-
-Before
-
-↓
-
-After
-
-Include measurements whenever available.
-
-Examples:
-
-- retrieval latency
-- indexing speed
-- evaluation speed
-- memory usage
-- startup time
-
-Explain any regressions.
+---
 
 # Backward Compatibility
 
 Explain:
 
-- what existing functionality remained unchanged
-- any migration required
-- compatibility risks
+- Existing functionality preserved
+- Breaking changes (if any)
+- Migration required (if any)
+
+---
 
 # Technical Debt
 
 List intentionally postponed work.
 
-For every item explain:
+For every item include:
 
-- why postponed
-- impact
-- recommended future branch
+- Description
+- Why postponed
+- Recommended future feature branch
+
+---
 
 # Known Limitations
 
-List everything still unfinished.
+List everything that remains unfinished.
 
-Be completely honest.
+Be honest.
 
 Do not hide limitations.
 
-# Current Architecture
+---
 
-Provide a concise architecture diagram representing the project after this branch.
+# Permanent Engineering Rules
 
-Show only meaningful components.
-
-# Current Project Status
-
-Completed
-
-In Progress
-
-Deferred
-
-Blocked
-
-Future
-
-# Recommended Next Feature Branches
-
-List the next implementation priorities in order.
-
-For every recommendation include:
-
-- objective
-- expected value
-- dependencies
-- estimated complexity
-- whether it is mandatory or optional
-
-Recommend removing work that no longer provides meaningful value.
-
-# Engineering Rules Learned
-
-If this branch established new engineering conventions, document them.
+Document any new project-wide engineering conventions established during this branch.
 
 Examples:
 
-- architectural rules
-- coding conventions
-- dependency rules
-- configuration principles
-- testing practices
+- Architecture rules
+- Dependency policy
+- Git workflow
+- Testing policy
+- Configuration principles
+- Documentation standards
+- Coding conventions
 - AI engineering principles
 
 These become permanent project rules.
+
+---
+
+# Current Project Status
+
+Summarize the current repository status.
+
+Include:
+
+- Completed
+- In Progress
+- Deferred
+- Future
+
+---
+
+# Recommended Next Feature Branches
+
+Recommend future branches in priority order.
+
+For each include:
+
+- Branch name
+- Objective
+- Dependencies
+- Estimated complexity
+- Mandatory or Optional
+
+---
 
 # Lessons Learned
 
 Summarize:
 
-- what worked well
-- what should be avoided
-- architectural improvements discovered
-- engineering insights gained
+- What worked well
+- What should be avoided
+- Architectural improvements discovered
+- Engineering insights gained
+
+---
 
 # Final Outcome
 
@@ -336,15 +387,17 @@ Provide a concise summary describing exactly what this feature branch accomplish
 
 The summary should be understandable without reading the rest of the document.
 
-End the document with:
+---
+
+End the document with one of the following:
+
 
 READY TO MERGE INTO MASTER
 
-if the branch is considered complete.
-
-Otherwise end with:
+or 
 
 DO NOT MERGE YET
 
-and explain what still needs to be completed.
+
+If the branch is not complete, clearly explain what remains before it should be merged into the Master Project Continuation Plan.
 ```
