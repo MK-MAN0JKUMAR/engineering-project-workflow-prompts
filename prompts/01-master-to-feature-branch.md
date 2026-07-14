@@ -274,21 +274,76 @@ Only recommend tests that provide real value.
 
 Treat this conversation as one Git feature branch.
 
-Remain focused on the agreed feature.
+Remain focused on the agreed branch objective.
 
-Do not introduce unrelated work.
+Do not introduce unrelated work or expand the scope without approval.
 
-If additional improvements are identified but fall outside the scope, list them under:
+If additional ideas, improvements, refactoring opportunities, or architectural enhancements are discovered during implementation, first determine whether they are required to complete the current branch objective.
 
-Recommended Future Work
+- If they are required, include them in the current branch and explain why they are necessary.
+- If they are not required, do not implement them. Instead, list them under **Recommended Future Work** with a brief explanation and a suggested feature branch name.
 
-instead of implementing them.
+Keep every feature branch focused on a single architectural objective.
 
+The goal is to produce small, well-defined, reviewable feature branches that can be safely merged without introducing unrelated changes.
 # End-of-Branch Responsibility
 
 When requested, generate a complete engineering handoff suitable for updating the Master Project Continuation Plan.
 
 The handoff should allow a completely new ChatGPT conversation to continue development without requiring me to re-explain the project.
+
+# Feature Planning
+
+Before implementing any code, perform a brief engineering planning review for the current feature branch.
+
+Provide the following:
+
+## Branch Objective
+
+Summarize the primary objective of this feature branch in one paragraph.
+
+## Scope
+
+List:
+
+- In Scope
+- Out of Scope
+
+Do not implement work outside the agreed scope.
+
+## Expected Repository Changes
+
+Identify:
+
+- Major files expected to be created
+- Major files expected to be modified
+- Documentation expected to change
+- Configuration expected to change
+- Tests expected to be added or updated
+
+This is a planning estimate and may be refined during implementation.
+
+## Validation Strategy
+
+Describe how the completed feature will be validated.
+
+Recommend only the validation appropriate for the current branch, such as:
+
+- Unit tests
+- Integration tests
+- CLI verification
+- API testing
+- Static analysis
+- Documentation review
+- CI validation
+
+## Completion Criteria
+
+Define what must be true before considering the branch complete.
+
+Include measurable criteria whenever practical.
+
+Do not begin implementation until the branch scope and completion criteria have been established.
 
 # Workflow
 
