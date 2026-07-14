@@ -43,19 +43,21 @@ Future Feature Branches
 
 # Prompt
 ```
-Act as a Principal Software Engineer, AI Platform Architect, Staff SDET, Technical Mentor, and Engineering Career Advisor.
+Act as a Principal Software Engineer, AI Platform Architect, Staff SDET, Technical Mentor, Engineering Career Advisor, and Technical Hiring Manager.
 
-The current Project Continuation Plan is the single source of truth.
+Treat the current Project Continuation Plan as the authoritative source of truth.
 
-Review the complete project.
+Review the complete project, my current engineering direction, and current industry trends.
 
-Review my current engineering direction.
+Base recommendations on the current implementation, my demonstrated skills, and the current engineering ecosystem.
 
-Review current AI engineering trends.
+Do not assume skills or project capabilities that have not been demonstrated.
 
-Review current software testing trends.
+When current market or technology trends are required, use current information rather than historical assumptions.
 
-Review current hiring expectations.
+If implementation details are required and the relevant files have not been shared, request only the necessary files before making conclusions.
+
+The objective is to maximize long-term engineering growth while avoiding unnecessary learning and unnecessary project complexity.
 
 The objective is to determine:
 
@@ -83,6 +85,20 @@ Summarize:
 - strongest skills
 - weakest skills
 - overall learning direction
+
+# Progress Since Last Review
+
+Summarize what has changed since the previous Engineering Learning Review.
+
+Include:
+
+- Major feature branches completed
+- New technical skills demonstrated
+- Architecture maturity gained
+- Testing maturity gained
+- Areas that did not improve
+
+Highlight measurable progress rather than planned work.
 
 # Current Skill Assessment
 
@@ -160,17 +176,21 @@ Explain the reasoning.
 
 # Market Review
 
-Based on current industry trends:
+Review the current software engineering, AI engineering, and testing landscape.
 
-Which technologies are growing?
+Focus on trends that are directly relevant to my long-term goal.
 
-Which technologies are becoming less important?
+For every recommendation classify it as:
 
-Which skills are becoming mandatory?
+- Essential
+- Valuable
+- Optional
+- Monitor Only
+- Not Recommended
 
-Which skills are becoming optional?
+Explain why each classification was chosen.
 
-Explain why.
+Avoid recommending technologies based only on popularity.
 
 # Project Gap Analysis
 
@@ -190,6 +210,16 @@ missing enterprise features
 
 Only recommend features that provide meaningful engineering value.
 
+# Skill-to-Project Mapping
+
+For every major skill recommendation identify:
+
+- Which future feature branch would develop it
+- Which interview topic it strengthens
+- Which portfolio capability it improves
+
+Prioritize learning through building rather than isolated study whenever practical.
+
 # Learning Priorities
 
 Organize recommendations into:
@@ -207,6 +237,26 @@ Future
 Explain why each topic belongs in that phase.
 
 # Technology Evaluation
+
+Evaluate technologies based on:
+
+- Industry adoption
+- Ecosystem maturity
+- Production suitability
+- Portfolio value
+- Interview relevance
+- Long-term maintenance
+- Compatibility with the current project architecture
+
+For each technology classify:
+
+- Learn Immediately
+- Learn Soon
+- Learn Later
+- Monitor
+- Ignore
+
+Explain the reasoning.
 
 Review important technologies such as:
 
@@ -330,6 +380,22 @@ Open Source
 
 Explain the reasoning.
 
+# Time Investment Strategy
+
+Assume I am working full-time while building this project part-time.
+
+Recommend an approximate allocation of learning time across:
+
+- Project Development
+- Reading Documentation
+- Building Small Experiments
+- Open Source Contributions
+- Interview Preparation
+- System Design Practice
+- Research Papers
+
+Provide percentages and explain why.
+
 # Things To Avoid
 
 Identify:
@@ -371,6 +437,18 @@ Estimated Complexity
 Prerequisites
 
 Recommended Order
+
+# Learning Backlog
+
+Generate a backlog of topics that are intentionally postponed.
+
+For each topic explain:
+
+- Why it is postponed
+- What prerequisite skills are required
+- When it should be revisited
+
+Avoid recommending topics that are unlikely to provide meaningful value within the next 12–24 months.
 
 # Final Roadmap
 
@@ -418,5 +496,26 @@ Learning Efficiency
 
 Overall Progress
 
-Conclude with the three highest-impact actions I should focus on next to maximize long-term technical growth and career value.
+Conclude with:
+
+# Next Review Plan
+
+Recommend:
+
+- The next Engineering Learning Review date or milestone
+- The project milestone that should trigger the next review
+- The skills that should improve before the next review
+
+Finish with:
+
+## Top Three Priorities
+
+Identify the three highest-impact actions for maximizing:
+
+- Engineering growth
+- Portfolio quality
+- Interview readiness
+- Long-term career value
+
+Rank them in order of expected impact.
 ```
