@@ -52,19 +52,21 @@ Continue Development
 ```
 Generate a complete Master Project Continuation Plan for this project.
 
-Assume this Master conversation will now be archived because it has become too large.
+Assume this Master conversation is being archived because it has become too large to continue efficiently.
 
-The generated document will become the only reference used to continue development in a brand-new Master conversation.
+The generated document will become the architectural baseline and the only project history used by future Master conversations.
 
-Do not summarize only recent work.
+Review the **entire conversation**, not only the most recent messages.
 
-Review the entire conversation and produce the complete current state of the project.
-
-Write the document for another senior engineer who has never seen this conversation.
+Preserve all important engineering decisions, completed feature branches, architectural changes, permanent project rules, configuration decisions, dependency changes, and future roadmap items.
 
 Do not include implementation code.
 
-The document should become the new single source of truth for the project.
+Write the document as if another senior engineer will continue the project months later without access to this conversation.
+
+If the response exceeds the maximum response size, continue in additional parts until every required section has been completed.
+
+Do not omit sections because of response length.
 
 Use the following structure.
 
@@ -97,6 +99,16 @@ Provide the latest repository structure.
 Include only meaningful folders and major modules.
 
 # Technology Stack
+
+Document only technologies currently adopted by the repository.
+
+Do not include planned technologies that have not yet been implemented.
+
+For each technology explain:
+
+- Current role
+- Why it was selected
+- Future replacement strategy (if applicable)
 
 List:
 
@@ -250,6 +262,25 @@ For every completed branch include:
 
 Do not omit completed branches.
 
+# Repository Evolution
+
+Summarize how the repository evolved throughout the project.
+
+Organize by feature branch.
+
+For each branch include:
+
+- Branch name
+- Repository impact
+- Major files added
+- Major files modified
+- Dependencies introduced or updated
+- Architectural significance
+
+Keep each branch summary concise.
+
+The objective is to understand how the repository evolved over time without reading every individual branch handoff.
+
 # Major Engineering Decisions
 
 List important decisions made during the project.
@@ -261,6 +292,22 @@ For every decision include:
 - Final decision
 - Reason
 - Trade-offs
+
+# Permanent Architectural Constraints
+
+Document every permanent architectural constraint currently governing the project.
+
+Examples:
+
+- Stable package namespace
+- Dependency direction
+- Provider abstraction
+- Configuration boundary
+- Replaceable infrastructure
+- Plugin architecture
+- Backward compatibility policy
+
+These constraints should only change through an approved architectural redesign.
 
 # Problems Solved
 
@@ -408,5 +455,19 @@ End with a concise project snapshot containing:
 - Next Recommended Feature Branch
 - Overall Project Health
 
-This document should be complete enough that a brand-new ChatGPT conversation can immediately continue development without requiring any additional historical context.
+This document should become the authoritative continuation plan for the project.
+
+Future feature branches should extend this document rather than replace it.
+
+The continuation plan should preserve sufficient engineering history that future development can continue without referring back to archived conversations.
+
+End with a concise project snapshot containing:
+
+- Master Version
+- Repository Status
+- Architecture Status
+- Current Development Phase
+- Active Git Strategy
+- Next Recommended Feature Branch
+- Overall Project Health
 ```
