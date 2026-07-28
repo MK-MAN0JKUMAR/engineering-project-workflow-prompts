@@ -10,6 +10,8 @@ This guide must be followed before implementing any new feature.
 
 ---
 
+```
+
 # Project Vision
 
 This project is **not** a demo or tutorial.
@@ -297,3 +299,4 @@ The AI should:
 - Teach the reasoning behind the chosen approach.
 
 The objective is not only to build the platform but also to develop strong software architecture skills throughout the project.
+```
